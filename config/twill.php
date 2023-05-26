@@ -6,7 +6,11 @@ return [
     'capsules' => [
         'list' => [
             [
-                'name' => 'Homepages',
+                'name' => 'News',
+                'enabled' => true
+            ],
+            [
+                'name' => 'NewsCategories',
                 'enabled' => true
             ],
         ],
