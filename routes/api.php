@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+JsonApiRoute::server('v1')
+    ->prefix('v1')
+    ->resources(function ($server) {
+        $server->resource('news', LaravelJsonApi\Laravel\Http\Controllers\JsonApiController::class)
+            ->relationships(function ($relationships) {
+                $relationships->hasMany('blocks');
+                $relationships->hasMany('media');
+            });
+    });
+

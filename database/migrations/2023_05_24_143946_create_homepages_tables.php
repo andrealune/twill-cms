@@ -27,9 +27,6 @@ class CreateHomepagesTables extends Migration
             $table->string('intro_link')->nullable();
         });
 
-
-
-
     }
 
     public function down()
