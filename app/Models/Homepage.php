@@ -37,7 +37,7 @@ class Homepage extends Model
 
     public $mediasParams = [
         'intro_medias' => [
-            'default' => [
+            'desktop' => [
                 [
                     'name' => 'default',
                     'ratio' => 16 / 9,
@@ -51,7 +51,7 @@ class Homepage extends Model
             ],
         ],
         'slider_medias' => [
-            'default' => [
+            'desktop' => [
                 [
                     'name' => 'default',
                     'ratio' => 16 / 9,

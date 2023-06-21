@@ -11,16 +11,17 @@ class CreateNewsTables extends Migration
         Schema::create('news', function (Blueprint $table) {
             // this will create an id, a "published" column, and soft delete and timestamps columns
             createDefaultTableFields($table);
-            $table->string('seo_title')->nullable();
-            $table->string('seo_description')->nullable();
             $table->timestamp('publish_start_date')->nullable();
             $table->timestamp('publish_end_date')->nullable();
+            $table->string('seo_image')->nullable();
         });
 
         Schema::create('news_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'news');
             $table->string('title', 200)->nullable();
             $table->text('description')->nullable();
+            $table->string('seo_title')->nullable();
+            $table->string('seo_description')->nullable();
         });
 
         Schema::create('news_slugs', function (Blueprint $table) {

@@ -2,16 +2,6 @@
 @twillBlockIcon('image')
 @twillBlockGroup('app')
 
-<x-twill::select
-    name="variation"
-    label="Gallery variation"
-    :options="[
-        [ 'value' => 'fixed-width', 'label' => 'Fixed width' ],
-        [ 'value' => 'variable-width', 'label' => 'Variable width' ]
-    ]"
-    default="fixed-width"
-/>
-
 <x-twill::medias
     name="image"
     label="Images"

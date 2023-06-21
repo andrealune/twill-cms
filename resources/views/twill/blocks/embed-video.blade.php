@@ -2,9 +2,21 @@
 @twillBlockIcon('image')
 @twillBlockGroup('app')
 
-<x-twill::files
-    name="video"
-    label="video"
-    note="Video will overwrite previously selected images"
+<x-twill::medias
+    name="image"
+    label="Preview image"
     :max="1"
+    :extra-metadatas="[
+        [
+            'name' => 'show_info',
+            'label' => 'Show info',
+            'type' => 'checkbox'
+        ],
+    ]"
+/>
+
+<x-twill::input
+    name="url"
+    label="Video URL"
+    :translated="true"
 />

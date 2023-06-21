@@ -52,20 +52,6 @@ class NewsController extends BaseModuleController
         );
 
         $form->add(
-            Columns::make()
-                ->left([
-                    DatePicker::make()
-                        ->name('publish_start_date')
-                        ->label(twillTrans('Publish start date'))
-                ])
-                ->right([
-                    DatePicker::make()
-                        ->name('publish_end_date')
-                        ->label(twillTrans('Publish end date'))
-                ])
-        );
-
-        $form->add(
             Input::make()->name('description')->label(twillTrans('Keywords'))->translatable(),
         );
 
@@ -76,7 +62,11 @@ class NewsController extends BaseModuleController
         $form->addFieldset(
             Fieldset::make()->title('SEO')->id('seo')->fields([
                 Input::make()->name('seo_title')->label(twillTrans('Title SEO'))->translatable(),
-                Input::make()->name('seo_description')->label(twillTrans('Description SEO'))->translatable()
+                Input::make()->name('seo_description')->label(twillTrans('Description SEO'))->translatable(),
+                Medias::make()
+                    ->name('seo_image')
+                    ->label(twillTrans('Image SEO'))
+                    ->max(1)
             ])
         );
 
