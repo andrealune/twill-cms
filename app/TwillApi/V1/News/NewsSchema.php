@@ -38,7 +38,8 @@ class NewsSchema extends ModelSchema
             Str::make('title'),
             Str::make('description'),
             Str::make('seo_title'),
-            Str::make('seo_description')
+            Str::make('seo_description'),
+            Str::make('seo_image')
         ]);
     }
 
