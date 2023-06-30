@@ -16,6 +16,14 @@ return [
                 'name' => 'NewsCategories',
                 'enabled' => true
             ],
+            [
+                'name' => 'Projects',
+                'enabled' => true
+            ],
+            [
+                'name' => 'ProjectCategories',
+                'enabled' => true
+            ],
         ],
     ],
 ];
