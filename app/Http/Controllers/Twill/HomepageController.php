@@ -71,7 +71,11 @@ class HomepageController extends BaseModuleController
         $form->addFieldset(
             Fieldset::make()->title('SEO')->id('seo')->fields([
                 Input::make()->name('seo_title')->label(twillTrans('Title SEO'))->translatable(),
-                Input::make()->name('seo_description')->label(twillTrans('Description SEO'))->translatable()
+                Input::make()->name('seo_description')->label(twillTrans('Description SEO'))->translatable(),
+                Medias::make()
+                    ->name('seo_image')
+                    ->label(twillTrans('Image SEO'))
+                    ->max(1)
             ])
         );
 

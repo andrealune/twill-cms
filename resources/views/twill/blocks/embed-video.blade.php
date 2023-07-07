@@ -6,13 +6,6 @@
     name="image"
     label="Preview image"
     :max="1"
-    :extra-metadatas="[
-        [
-            'name' => 'show_info',
-            'label' => 'Show info',
-            'type' => 'checkbox'
-        ],
-    ]"
 />
 
 <x-twill::input

@@ -2,8 +2,8 @@
     <div class="paragraph-wrapper flex flex-wrap">
         <div class="paragraph-left w-1/4">
             <h2 class="paragraph-screamer font-medium text-2xl">"{!! $block->translatedInput('quote') !!}"</h2>
-            <div class="paragraph-author-name text-sm font-semibold mt-6">{!! $block->translatedInput('author_name') !!}</div>
-            <div class="paragraph-author-role text-sm">{!! $block->translatedInput('author_role') !!}</div>
+            <div class="paragraph-author-name text-sm font-semibold mt-6 uppercase">{!! $block->translatedInput('author_name') !!}</div>
+            <div class="paragraph-author-role text-sm uppercase">{!! $block->translatedInput('cta_label') !!}</div>
         </div>
         <div class="paragraph-right w-1/4"></div>
         <div class="paragraph-right w-2/4">

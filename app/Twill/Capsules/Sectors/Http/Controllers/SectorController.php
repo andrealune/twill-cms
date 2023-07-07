@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Twill\Capsules\Projects\Http\Controllers;
+namespace App\Twill\Capsules\Sectors\Http\Controllers;
 
 use A17\Twill\Models\Contracts\TwillModelContract;
 use A17\Twill\Services\Forms\Fields\BlockEditor;
-use A17\Twill\Services\Forms\Fields\Browser;
 use A17\Twill\Services\Forms\Fields\Medias;
 use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Listings\Columns\Text;
@@ -12,11 +11,10 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
-use App\Twill\Capsules\ProjectCategories\Models\ProjectCategory;
 
-class ProjectController extends BaseModuleController
+class SectorController extends BaseModuleController
 {
-    protected $moduleName = 'projects';
+    protected $moduleName = 'sectors';
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
@@ -33,15 +31,6 @@ class ProjectController extends BaseModuleController
         $form = parent::getForm($model);
 
         $form->add(
-            Browser::make()
-                ->label(twillTrans('Category'))
-                ->modules([ProjectCategory::class])
-                ->name('category')
-                ->browserNote('')
-                ->max(1)
-        );
-
-        $form->add(
             Medias::make()
                 ->name('cover')
                 ->label(twillTrans('Cover image'))
@@ -49,23 +38,17 @@ class ProjectController extends BaseModuleController
         );
 
         $form->add(
-            Input::make()->name('abstract')->label('Abstract')->translatable()
-        );
-
-        $form->add(
             Input::make()->name('description')->label('Description')->translatable()
         );
 
-        $form->add(
-            Input::make()->name('client')->label('Client')->translatable()
-        );
-
-        $form->add(
-            Input::make()->name('location')->label('Location')->translatable()
-        );
-
-        $form->add(
-            Input::make()->name('year')->label('Year')->translatable()
+        $form->addFieldset(
+            Fieldset::make()->title('Introduction')->id('intro')->fields([
+                Medias::make()
+                    ->name('intro_medias')
+                    ->label(twillTrans('Add image'))
+                    ->max(3),
+                Input::make()->name('intro_text')->label(twillTrans('Text'))->translatable()
+            ])
         );
 
         $form->add(

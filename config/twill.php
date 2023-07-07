@@ -24,6 +24,14 @@ return [
                 'name' => 'ProjectCategories',
                 'enabled' => true
             ],
+            [
+                'name' => 'Sectors',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'Services',
+                'enabled' => true,
+            ]
         ],
     ],
 ];

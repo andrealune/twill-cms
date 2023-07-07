@@ -3,14 +3,7 @@
 @twillBlockGroup('app')
 
 <x-twill::medias
-    name="image"
+    name="images"
     label="Images"
     :max="20"
-    :extra-metadatas="[
-        [
-            'name' => 'show_info',
-            'label' => 'Show info',
-            'type' => 'checkbox'
-        ],
-    ]"
 />

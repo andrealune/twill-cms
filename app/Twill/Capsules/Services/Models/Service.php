@@ -1,42 +1,40 @@
 <?php
 
-namespace App\Models;
+namespace App\Twill\Capsules\Services\Models;
 
-use A17\Twill\Models\Behaviors\HasFiles;
+use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasTranslation;
+use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
+use A17\Twill\Models\Behaviors\HasFiles;
+use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
 
-class Homepage extends Model
+class Service extends Model
 {
-    use HasTranslation, HasMedias, HasFiles;
+    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions;
 
     protected $fillable = [
         'published',
         'title',
         'description',
-        'hero_title',
-        'hero_text',
-        'intro_text',
-        'intro_cta',
-        'intro_link'
     ];
 
     public $translatedAttributes = [
         'title',
         'description',
         'active',
-        'hero_title',
-        'hero_text',
         'intro_text',
-        'intro_cta',
-        'intro_link'
+        'seo_title',
+        'seo_description',
     ];
 
-    public $filesParams = ['hero_video_bg']; // a list of file
+    public $slugAttributes = [
+        'title',
+    ];
 
     public $mediasParams = [
-        'intro_medias' => [
+        'cover' => [
             'desktop' => [
                 [
                     'name' => 'default',
@@ -50,7 +48,7 @@ class Homepage extends Model
                 ],
             ],
         ],
-        'slider_medias' => [
+        'intro_medias' => [
             'desktop' => [
                 [
                     'name' => 'default',

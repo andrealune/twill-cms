@@ -36,5 +36,11 @@ class AppServiceProvider extends ServiceProvider
                     NavigationLink::make()->forModule('project_categories')->title('Categories')
                 ])
         );
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('sectors')
+        );
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('services')
+        );
     }
 }
