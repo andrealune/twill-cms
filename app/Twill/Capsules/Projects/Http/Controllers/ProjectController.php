@@ -35,7 +35,7 @@ class ProjectController extends BaseModuleController
         $form->add(
             Browser::make()
                 ->label(twillTrans('Category'))
-                ->modules([ProjectCategory::class])
+                ->modules(['category' => ProjectCategory::class])
                 ->name('category')
                 ->browserNote('')
                 ->max(1)

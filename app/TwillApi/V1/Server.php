@@ -42,6 +42,9 @@ class Server extends BaseServer
             \A17\Twill\API\JsonApi\V1\Tags\TagSchema::class,
             \A17\Twill\API\JsonApi\V1\Users\UserSchema::class,
             News\NewsSchema::class,
+            Projects\ProjectSchema::class,
+            Sectors\SectorSchema::class,
+            Services\ServiceSchema::class,
         ];
     }
 

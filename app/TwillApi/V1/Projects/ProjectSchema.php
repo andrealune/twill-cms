@@ -1,20 +1,20 @@
 <?php
 
-namespace App\TwillApi\V1\News;
+namespace App\TwillApi\V1\Projects;
 
-use App\Twill\Capsules\News\Models\News;
+use App\Twill\Capsules\Projects\Models\Project;
 use LaravelJsonApi\Eloquent\Fields\Str;
 use LaravelJsonApi\Eloquent\Fields\DateTime;
 use A17\Twill\API\JsonApi\V1\Models\ModelSchema;
 
-class NewsSchema extends ModelSchema
+class ProjectSchema extends ModelSchema
 {
     /**
      * The model the schema corresponds to.
      *
      * @var string
      */
-    public static string $model = News::class;
+    public static string $model = Project::class;
 
     /**
      * Show published or draft status attribute
@@ -36,7 +36,11 @@ class NewsSchema extends ModelSchema
             DateTime::make('createdAt')->sortable()->readOnly(),
             DateTime::make('updatedAt')->sortable()->readOnly(),
             Str::make('title'),
+            Str::make('abstract'),
             Str::make('description'),
+            Str::make('client'),
+            Str::make('location'),
+            Str::make('year'),
             Str::make('seo_title'),
             Str::make('seo_description')
         ]);

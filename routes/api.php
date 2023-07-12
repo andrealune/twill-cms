@@ -28,3 +28,32 @@ JsonApiRoute::server('v1')
             });
     });
 
+JsonApiRoute::server('v1')
+    ->prefix('v1')
+    ->resources(function ($server) {
+        $server->resource('projects', LaravelJsonApi\Laravel\Http\Controllers\JsonApiController::class)
+            ->relationships(function ($relationships) {
+                $relationships->hasMany('blocks');
+                $relationships->hasMany('media');
+            });
+    });
+JsonApiRoute::server('v1')
+    ->prefix('v1')
+    ->resources(function ($server) {
+        $server->resource('sectors', LaravelJsonApi\Laravel\Http\Controllers\JsonApiController::class)
+            ->relationships(function ($relationships) {
+                $relationships->hasMany('blocks');
+                $relationships->hasMany('media');
+            });
+    });
+
+JsonApiRoute::server('v1')
+    ->prefix('v1')
+    ->resources(function ($server) {
+        $server->resource('services', LaravelJsonApi\Laravel\Http\Controllers\JsonApiController::class)
+            ->relationships(function ($relationships) {
+                $relationships->hasMany('blocks');
+                $relationships->hasMany('media');
+            });
+    });
+

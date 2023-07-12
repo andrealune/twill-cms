@@ -10,7 +10,7 @@ use App\Twill\Capsules\ProjectCategories\Models\ProjectCategory;
 
 class ProjectCategoryRepository extends ModuleRepository
 {
-    use HandleTranslations, HandleSlugs, HandleMedias;
+    use HandleTranslations, HandleSlugs;
 
     public function __construct(ProjectCategory $model)
     {

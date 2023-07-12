@@ -4,7 +4,7 @@ namespace App\TwillApi\V1\Blocks;
 
 use A17\Twill\API\JsonApi\V1\Blocks\BlockContent;
 
-class BlockContentCarousel-item extends BlockContent
+class BlockContentEmbedVideo extends BlockContent
 {
     /**
      * Get the resource's content attributes.

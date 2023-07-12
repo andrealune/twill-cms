@@ -7,24 +7,24 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class ProjectCategory extends Model 
+class ProjectCategory extends Model
 {
-    use HasTranslation, HasSlug, HasMedias;
+    use HasTranslation, HasSlug;
 
     protected $fillable = [
         'published',
         'title',
         'description',
     ];
-    
+
     public $translatedAttributes = [
         'title',
         'description',
         'active',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
 }

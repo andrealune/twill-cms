@@ -18,10 +18,7 @@ class Project extends Model
     protected $fillable = [
         'published',
         'title',
-        'description',
-        'client',
-        'location',
-        'year',
+        'description'
     ];
 
     public $translatedAttributes = [
@@ -29,6 +26,9 @@ class Project extends Model
         'description',
         'active',
         'abstract',
+        'client',
+        'location',
+        'year',
         'seo_title',
         'seo_description',
     ];

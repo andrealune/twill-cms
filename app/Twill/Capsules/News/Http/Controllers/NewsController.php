@@ -38,7 +38,7 @@ class NewsController extends BaseModuleController
         $form->add(
             Browser::make()
                 ->label(twillTrans('Category'))
-                ->modules([NewsCategory::class])
+                ->modules(['category' => NewsCategory::class])
                 ->name('category')
                 ->browserNote('')
                 ->max(1)
