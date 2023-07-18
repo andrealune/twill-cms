@@ -4,7 +4,7 @@ namespace App\TwillApi\V1\Blocks;
 
 use A17\Twill\API\JsonApi\V1\Blocks\BlockContent;
 
-class BlockContentEmbedVideo extends BlockContent
+class BlockContentGalleryTechnical extends BlockContent
 {
     /**
      * Get the resource's content attributes.
@@ -13,12 +13,16 @@ class BlockContentEmbedVideo extends BlockContent
      */
     public function content(): iterable
     {
-        $tabs = [];
+        $sheets = [];
         foreach($this->resource->children as $item) {
-            $tabs[] = $item->content;
+            $texts = [];
+            foreach($item->children as $item2) {
+                $texts[] = $item2->content;
+            }
+            $sheets[] = array_merge($item->content, ['texts' => $texts]);
         }
         return [
-            'url' => $this->resource->input('url'),
+            'sheets' => $sheets,
         ];
     }
 }

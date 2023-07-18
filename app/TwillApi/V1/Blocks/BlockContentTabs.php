@@ -4,7 +4,7 @@ namespace App\TwillApi\V1\Blocks;
 
 use A17\Twill\API\JsonApi\V1\Blocks\BlockContent;
 
-class BlockContentEmbedVideo extends BlockContent
+class BlockContentTabs extends BlockContent
 {
     /**
      * Get the resource's content attributes.
@@ -18,7 +18,10 @@ class BlockContentEmbedVideo extends BlockContent
             $tabs[] = $item->content;
         }
         return [
-            'url' => $this->resource->input('url'),
+            'title' => $this->resource->input('title'),
+            'cta_label' => $this->resource->input('cta_label'),
+            'cta_url' => $this->resource->input('cta_url'),
+            'tabs' => $tabs,
         ];
     }
 }

@@ -4,10 +4,48 @@ return [
     'version' => 1,
     'admin_app_title_suffix' => 'Quattrolinee',
     'block_editor' => [
-        'use_twill_blocks' => []
+        'use_twill_blocks' => [],
+        'crops' => [
+            'media' => [
+                'desktop' => [
+                    [
+                        'name' => 'desktop',
+                        'ratio' => 16 / 9,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
+                'tablet' => [
+                    [
+                        'name' => 'tablet',
+                        'ratio' => 4 / 3,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
+                'mobile' => [
+                    [
+                        'name' => 'mobile',
+                        'ratio' => 1,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
+            ],
+        ]
     ],
     'capsules' => [
         'list' => [
+            [
+                'name' => 'Pages',
+                'enabled' => true,
+            ],
             [
                 'name' => 'News',
                 'enabled' => true

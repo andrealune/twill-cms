@@ -3,7 +3,7 @@
 @twillBlockGroup('app')
 
 <x-twill::medias
-    name="images"
+    name="media"
     label="Images"
     :max="20"
 />

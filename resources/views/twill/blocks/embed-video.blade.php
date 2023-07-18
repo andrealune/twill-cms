@@ -3,7 +3,7 @@
 @twillBlockGroup('app')
 
 <x-twill::medias
-    name="image"
+    name="media"
     label="Preview image"
     :max="1"
 />

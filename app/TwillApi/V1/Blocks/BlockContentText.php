@@ -14,7 +14,7 @@ class BlockContentText extends BlockContent
     public function content(): iterable
     {
         return [
-            // @TODO
+            'text' => $this->resource->input('text')
         ];
     }
 }
