@@ -34,6 +34,7 @@ class SectorController extends BaseModuleController
             Medias::make()
                 ->name('cover')
                 ->label(twillTrans('Cover image'))
+                ->required()
                 ->max(1)
         );
 

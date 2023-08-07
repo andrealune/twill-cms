@@ -2,4 +2,4 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
-<x-twill::repeater type="slide"/>
+<x-twill::repeater type="text-slide"/>

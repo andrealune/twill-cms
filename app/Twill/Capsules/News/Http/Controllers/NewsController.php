@@ -41,6 +41,7 @@ class NewsController extends BaseModuleController
                 ->modules(['category' => NewsCategory::class])
                 ->name('category')
                 ->browserNote('')
+                ->required()
                 ->max(1)
         );
 
@@ -48,6 +49,7 @@ class NewsController extends BaseModuleController
             Medias::make()
                 ->name('cover')
                 ->label(twillTrans('Cover image'))
+                ->required()
                 ->max(1)
         );
 
@@ -56,7 +58,12 @@ class NewsController extends BaseModuleController
         );
 
         $form->add(
-            BlockEditor::make()
+            BlockEditor::make()->blocks([
+                'title-text',
+                'gallery',
+                'embed-video',
+                'quote-text'
+            ])
         );
 
         $form->addFieldset(

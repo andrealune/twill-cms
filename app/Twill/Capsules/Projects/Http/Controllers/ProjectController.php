@@ -38,6 +38,7 @@ class ProjectController extends BaseModuleController
                 ->modules(['category' => ProjectCategory::class])
                 ->name('category')
                 ->browserNote('')
+                ->required()
                 ->max(1)
         );
 
@@ -45,27 +46,28 @@ class ProjectController extends BaseModuleController
             Medias::make()
                 ->name('cover')
                 ->label(twillTrans('Cover image'))
+                ->required()
                 ->max(1)
         );
 
         $form->add(
-            Input::make()->name('abstract')->label('Abstract')->translatable()
+            Input::make()->name('abstract')->label('Abstract')->translatable()->required()
         );
 
         $form->add(
-            Input::make()->name('description')->label('Description')->translatable()
+            Input::make()->name('description')->label('Description')->translatable()->required()
         );
 
         $form->add(
-            Input::make()->name('client')->label('Client')->translatable()
+            Input::make()->name('client')->label('Client')->translatable()->required()
         );
 
         $form->add(
-            Input::make()->name('location')->label('Location')->translatable()
+            Input::make()->name('location')->label('Location')->translatable()->required()
         );
 
         $form->add(
-            Input::make()->name('year')->label('Year')->translatable()
+            Input::make()->name('year')->label('Year')->translatable()->required()
         );
 
         $form->add(

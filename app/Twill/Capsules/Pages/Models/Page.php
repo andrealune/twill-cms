@@ -10,7 +10,7 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
 
-class Page extends Model 
+class Page extends Model
 {
     use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions;
 
@@ -18,16 +18,17 @@ class Page extends Model
         'published',
         'title',
         'description',
+        'type'
     ];
-    
+
     public $translatedAttributes = [
         'title',
         'description',
         'active',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
 }

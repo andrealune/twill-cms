@@ -5,6 +5,7 @@ return [
     'admin_app_title_suffix' => 'Quattrolinee',
     'block_editor' => [
         'use_twill_blocks' => [],
+        'files' => ['video'],
         'crops' => [
             'media' => [
                 'desktop' => [
@@ -68,6 +69,26 @@ return [
             ],
             [
                 'name' => 'Services',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'Teams',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'Offices',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'Awards',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'Certfications',
+                'enabled' => true,
+            ],
+            [
+                'name' => 'CertficationCategories',
                 'enabled' => true,
             ]
         ],

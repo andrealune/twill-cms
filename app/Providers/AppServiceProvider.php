@@ -42,5 +42,21 @@ class AppServiceProvider extends ServiceProvider
         TwillNavigation::addLink(
             NavigationLink::make()->forModule('services')
         );
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('teams')->title('Team')
+                ->setChildren([
+                    NavigationLink::make()->forModule('offices')
+                ])
+        );
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('awards')
+        );
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('certfications')->title('Certifications')
+                ->setChildren([
+                    NavigationLink::make()->forModule('certficationCategories')->title('Categories')
+                ])
+        );
+
     }
 }

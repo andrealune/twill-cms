@@ -8,7 +8,9 @@ class PageRequest extends Request
 {
     public function rulesForCreate()
     {
-        return [];
+        return [
+            'type' => 'required|unique:pages,type',
+        ];
     }
 
     public function rulesForUpdate()

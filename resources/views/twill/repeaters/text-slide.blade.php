@@ -1,4 +1,4 @@
-@twillRepeaterTitle('Slide')
+@twillRepeaterTitle('Text Slide')
 @twillRepeaterMax('10')
 
 <x-twill::input
